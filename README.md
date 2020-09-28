@@ -31,7 +31,7 @@ to = YOUR_NUMBER
 
 ## HOW TO USE
 
->><img align="right" padding-inline=25% src="https://i.postimg.cc/g0FrdtxH/demo.png">
+>><img align="right" src="https://i.postimg.cc/g0FrdtxH/demo.png">
 
 1.) Download the binary zip from [github](https://github.com/crownium/OWNotify/releases/download/v0.3/OWNotify.zip) or [mega.nz](https://mega.nz/file/bOom1BaT#EXGxjJz1EhmzqvMjRdNaSHPepuh88HkQi__5IMGXUNk) and extract it.
 
