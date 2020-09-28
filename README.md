@@ -33,7 +33,7 @@ to = YOUR_NUMBER
 
 >><img align="right" src="https://i.postimg.cc/g0FrdtxH/demo.png">
 
-1.) Download the binary zip from [github](https://github.com/crownium/OWNotify/releases/download/v0.3/OWNotify.zip) or [mega.nz](https://mega.nz/file/bOom1BaT#EXGxjJz1EhmzqvMjRdNaSHPepuh88HkQi__5IMGXUNk) and extract it.
+1.) Download the binary zip from [github](https://github.com/crownium/OWNotify/releases/download/v1.0/OWNotify.zip) or [mega.nz](https://mega.nz/file/bOom1BaT#EXGxjJz1EhmzqvMjRdNaSHPepuh88HkQi__5IMGXUNk) and extract it.
 
 3.) Copy your Twilio informations inside the file `config.ini`.
 
