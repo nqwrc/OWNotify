@@ -1,6 +1,8 @@
 # OWNotify
 
-A simple tool for Overwatch that sends you a notification on your phone when you finally get queued into a game. Works with every gamemode not just competitive.
+A simple tool for Overwatch that sends you a notification on your phone when you finally get queued into a game. Works with every gamemode, not just competitive.
+
+Download from <a class="github-button" href="https://github.com/crownium/OWNotify/archive/master.zip" data-icon="octicon-download" data-size="large" aria-label="Download crownium/OWNotify on GitHub">GitHub</a> or <a class="github-button" href="https://github.com/crownium/OWNotify/archive/master.zip" data-icon="octicon-download" data-size="large" aria-label="Download crownium/OWNotify on GitHub">MEGA.NZ</a>
 
 Supported services :
 
