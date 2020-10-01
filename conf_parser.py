@@ -1,6 +1,7 @@
 from configparser import ConfigParser
 from os import path
-
+from tkinter import messagebox
+import re
 from twilio.rest import Client
 
 configs = 'config.ini'
@@ -15,7 +16,8 @@ class Parser(ConfigParser):
         self.add_section('Settings')
         self.set('Settings', 'togglemax', '0')
         self.set('Settings', 'stayontop', '0')
-        self.set('Settings', 'message', 'comm_service')
+        self.set('Settings', 'mode', '0')
+        self.set('Settings', 'message', 'Whatsapp')
 
         self.add_section('Discord')
         self.set('Discord', 'token', 'bot_secret_token')
@@ -53,10 +55,8 @@ class Parser(ConfigParser):
             mode = 'whatsapp:'
             from_num = self.get('Twilio', 'from_whatsapp')
 
-        message = client.messages.create(body=message,
-                    from_=mode+from_num, to=mode+to_num)
-
-        print(message)
+        try: message = client.messages.create(body=message, from_=mode+from_num, to=mode+to_num)
+        except Exception as e: messagebox.showerror("Error", re.compile(r'(\x9B|\x1B\[)[0-?]*[ -/]*[@-~]').sub('', str(e)))
 
     def telegramMsg(self):
         # TODO

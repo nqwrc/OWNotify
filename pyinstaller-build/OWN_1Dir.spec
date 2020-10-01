@@ -2,11 +2,16 @@
 
 block_cipher = None
 
+added_files = [
+    ( 'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python38\\Lib\\site-packages\\screen_recorder_sdk\\lib\\ScreenRecorder.dll', '.' ),
+    ( 'config.ini', '.' ),
+    ( 'icons\\own.ico', 'icons' )
+]
 
 a = Analysis(['gui.py'],
-             pathex=['C:\\PATH_TO_OWNotify'],
+             pathex=['C:\\Users\\User\\Desktop\\OWNotify'],
              binaries=[],
-             datas=[],
+             datas=added_files,
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
