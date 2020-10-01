@@ -1,4 +1,4 @@
-# OWNotify
+# OWNotify - Now working in FULLSCREEN !
 
 A simple tool for Overwatch that sends you a notification on your phone when you finally get queued into a game. Works with every gamemode, not just competitive.
 
@@ -9,7 +9,7 @@ Supported services :
 - Whatsapp
 - SMS
 
-**(NOTE - As of now this program only works with Overwatch in Windowed or Borderless Windowed mode)**
+**(NOTE - Works with Windowed, Borderless and Fullscreen !!! )**
 
 ---
 
