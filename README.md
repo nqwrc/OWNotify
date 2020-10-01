@@ -2,7 +2,9 @@
 
 A simple tool for Overwatch that sends you a notification on your phone when you finally get queued into a game. Works with every gamemode, not just competitive.
 
-Download from <a class="github-button" href="https://github.com/crownium/OWNotify/archive/master.zip" data-icon="octicon-download" data-size="large" aria-label="Download crownium/OWNotify on GitHub">GitHub</a> or <a class="github-button" href="https://github.com/crownium/OWNotify/archive/master.zip" data-icon="octicon-download" data-size="large" aria-label="Download crownium/OWNotify on GitHub">MEGA.NZ</a>
+Download the latest release from <a class="github-button" href="https://github.com/crownium/OWNotify/releases/download/v1.1/OWNotify.zip" data-icon="octicon-download" data-size="large" aria-label="Download crownium/OWNotify on GitHub">GitHub</a> or <a class="github-button" href="https://mega.nz/file/bGw0lZSJ#Jx7zBFljlZ6e5NtL7N0g6CwBhQVqps_mNSB-_HvBQa4" data-icon="octicon-download" data-size="large" aria-label="Download crownium/OWNotify on GitHub">MEGA.NZ</a> .
+
+If you encounter any problems, download the [debug](https://mega.nz/file/zXx0hbJS#MNwpw4SgcneNJZhdwbrg2YuDlaFwRJAtg3ZaY5ki_ms) version and contact me if needed.
 
 Supported services :
 
@@ -35,7 +37,7 @@ to = YOUR_NUMBER
 
 >><img align="right" src="https://i.postimg.cc/g0FrdtxH/demo.png">
 
-1.) Download the binary zip from [github](https://github.com/crownium/OWNotify/releases/download/v1.0/OWNotify.zip) or [mega.nz](https://mega.nz/file/bOom1BaT#EXGxjJz1EhmzqvMjRdNaSHPepuh88HkQi__5IMGXUNk) and extract it.
+1.) Download the latest binary zip from [github](https://github.com/crownium/OWNotify/releases/download/v1.1/OWNotify.zip) or [mega.nz](https://mega.nz/file/bGw0lZSJ#Jx7zBFljlZ6e5NtL7N0g6CwBhQVqps_mNSB-_HvBQa4) and extract it.
 
 3.) Copy your Twilio informations inside the file `config.ini`.
 
@@ -47,6 +49,6 @@ If the green button "Queue detected" pops up, then you know everything's working
 
 ---
 
-## Note
+### Note ( for windowed mode only )
 
-You don't need to keep Overwatch as your top window, just make sure that it's not minimized. To avoid that, you can select the setting `Auto restore window when minimized` inside the program.
+You don't need to keep Overwatch as your top window, just make sure that it's not minimized. To avoid that, you can select `Auto restore window when minimized` inside the program's settings.
