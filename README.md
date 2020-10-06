@@ -4,14 +4,14 @@ A simple tool for Overwatch that sends you a notification on your phone when you
 
 Download the latest release from <a class="github-button" href="https://github.com/crownium/OWNotify/releases/download/v1.1/OWNotify.zip" data-icon="octicon-download" data-size="large" aria-label="Download crownium/OWNotify on GitHub">GitHub</a> or <a class="github-button" href="https://mega.nz/file/bGw0lZSJ#Jx7zBFljlZ6e5NtL7N0g6CwBhQVqps_mNSB-_HvBQa4" data-icon="octicon-download" data-size="large" aria-label="Download crownium/OWNotify on GitHub">MEGA.NZ</a> .
 
-If you encounter any problems, download the [debug](https://mega.nz/file/zXx0hbJS#MNwpw4SgcneNJZhdwbrg2YuDlaFwRJAtg3ZaY5ki_ms) version and contact me if needed.
+If you encounter any problems, download the [debug](https://github.com/crownium/OWNotify/releases/download/v1.1/OWNotify-debug.zip) version and contact me if needed.
 
 Supported services :
 
 - Whatsapp
 - SMS
 
-**(NOTE - Works with Windowed, Borderless and Fullscreen !!! )**
+**(NOTE - Works with Windowed, Borderless and Fullscreen)**
 
 ---
 
