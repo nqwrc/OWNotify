@@ -1,4 +1,4 @@
-# OWNotify - Now working in FULLSCREEN !
+# OWNotify <img text="Overwatch Icon by Fengquan Li" align="right" src="https://i.postimg.cc/4dGqzJKs/ow.png">
 
 A simple tool for Overwatch that sends you a notification on your phone when you finally get queued into a game. Works with every gamemode, not just competitive.
 
@@ -11,7 +11,7 @@ Supported services :
 - Whatsapp
 - SMS
 
-**(NOTE - Works with Windowed, Borderless and Fullscreen)**
+## Works with Windowed, Borderless and Fullscreen mode.
 
 ---
 
@@ -21,9 +21,9 @@ In order to receive the notification, you will need to sign up at [Twilio's webs
 
 <!-- <img align="right" src="https://i.postimg.cc/85dpc4rQ/console.png" height=250> -->
 
-If you prefer whatsapp, after signing up follow [this](https://www.twilio.com/console/sms/whatsapp/learn) link. A different number will be given to you for receiving WhatsApp messages.
+If you prefer whatsapp, after signing up follow [this link](https://www.twilio.com/console/sms/whatsapp/learn). A different number will be given to you for receiving WhatsApp messages.
 
-Grab your informations such as your <u>account sid</u> , <u>auth token</u> and <u>phone number</u>, you will need to paste them inside the file `config.ini`
+From the twilio console, grab your informations such as your <u>account sid</u>, <u>auth token</u>, <u>phone number</u> and paste them inside the file `config.ini`
 
 
 ```c
@@ -43,12 +43,12 @@ to = YOUR_NUMBER
 
 4.) Open `OWNotify.exe` and press "Start".
 
-Now switch over to Overwatch and start your queue!
+Now switch over to Overwatch and start your queue !
 
-If the green button "Queue detected" pops up, then you know everything's working and you can start being productive while waiting for that long DPS queue!
+If the green button __Queue detected__ pops up, then you know everything is working and you can leave your pc and do whatever you prefer while waiting for that long DPS queue.
 
 ---
 
-### Note ( for windowed mode only )
+### Note for <ins>_windowed mode_</ins> only
 
-You don't need to keep Overwatch as your top window, just make sure that it's not minimized. To avoid that, you can select `Auto restore window when minimized` inside the program's settings.
+You can keep Overwatch in the background, just make sure that it's not minimized. To avoid that, you can select `Auto restore window when minimized` inside the program's settings.
