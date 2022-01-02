@@ -7,8 +7,7 @@ from win32.win32gui import (DeleteObject, FindWindow, GetWindowDC,
                             GetWindowPlacement, GetWindowRect, ReleaseDC,
                             ShowWindow)
 from win32.win32process import GetWindowThreadProcessId
-
-from keypress import FullscreenToWindowed
+import win32gui
 
 SW_MAXIMIZE = 3
 SRCCOPY = 13369376
@@ -24,15 +23,15 @@ class WindowCapture:
         threadid, self.pid  = GetWindowThreadProcessId(self.hwnd)
 
         if not self.hwnd:
-            messagebox.showerror("404", "{} window not found".format(window_name))
+            messagebox.showerror("404", "Run {} before pressing Start !".format(window_name))
             return
         ShowWindow(self.hwnd, SW_MAXIMIZE)
 
     def calcBox(self, w, h):
         if ((w, h) == (p1080[0][1])): adj = (0,)*4
-        else :                        adj = (-2, 2, 0, 27)
+        else : adj = (-2, 2, 0, 27)
 
-        w, h       = w - border, h - titlebar
+        w, h = w - border, h - titlebar
         w, h, x, y = round(w // c_w), round(h // c_h), round(w // c_x), round(h // c_y)
 
         return w + adj[0], h + adj[1], x + adj[2], y + adj[3]
@@ -42,27 +41,16 @@ class WindowCapture:
         flags, self.state, ptMin, ptMax, rect = GetWindowPlacement(self.hwnd)
         self.w, self.h = right - left, bottom - top
         # print(self.w, self.h)
+        # print(left, top, right, bottom, rect)
         # print(flags, self.state, ptMin, ptMax, rect)
+
         # print(self.fullscreen)
         return self.calcBox(self.w, self.h)
 
-    def exitFullscreen(self):
-        FullscreenToWindowed()
-        ShowWindow(self.hwnd, SW_MAXIMIZE)
-
-    def toggleMax(self, var):
-        if var == 1:
-            flags, self.state, ptMin, ptMax, rect = GetWindowPlacement(self.hwnd)
-            # print(flags, self.state, ptMin, ptMax, rect)
-            if self.state == 2: ShowWindow(self.hwnd, SW_MAXIMIZE)
-            # if rect[0] >= 1 and rect[1] >= 1:
-            #     ShowWindow(self.hwnd, SW_MAXIMIZE)
-
     def screenshot(self, var=0):
-        self.toggleMax(var)
         w, h, x, y = self.computeBox()
 
-        wDC = GetWindowDC(self.hwnd)
+        wDC = GetWindowDC(self.hwnd)        
         dcObj = CreateDCFromHandle(wDC)
         cDC = dcObj.CreateCompatibleDC()
         dataBitMap = CreateBitmap()
@@ -90,18 +78,3 @@ class WindowCapture:
         img = ascontiguousarray(img)
 
         return Image.fromarray(img)
-
-    def boxMinMatch(self):
-        percent = [60, 70, 77, 85, 120]
-        min_match = [200, 300, 540, 650, 850]
-
-        for item in percent:
-            w_percent = self.w *100/1920
-            h_percent = self.h *100/1080
-            if w_percent <= item or h_percent <= item:
-                match = min_match[percent.index(item)]
-                # print("W :", format(w_percent, '.2f')+"%", "H :", format(h_percent, '.2f')+"%")
-                # print("% arr :", item, "%")
-                # print(match)
-                return match, match*2, match*2.5, match*7
-

@@ -14,8 +14,6 @@ pytz==2020.1
 pywin32==228
 pywin32-ctypes==0.2.0
 requests==2.24.0
-screen-recorder-sdk==1.1.0
 setuptools==50.3.0
 six==1.15.0
-twilio==6.45.3
 urllib3==1.25.10
