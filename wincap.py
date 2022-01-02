@@ -12,8 +12,12 @@ import win32gui
 SW_MAXIMIZE = 3
 SRCCOPY = 13369376
 
-p1080 = (('fullscreen', (1920, 1080)), ('windowed', ((1936, 1056))))
-c_w, c_h, c_x, c_y = 6.3, 11.8, 2.352, 23.5
+borderless_mode = (1920, 1080)
+windowed_mode = (1936, 1056)
+
+width_threshold = 1900
+
+point__w, point__h, point__x, point__y = 6.3, 11.8, 2.352, 23.5
 border, titlebar = 16, 38
 
 class WindowCapture:
@@ -23,31 +27,33 @@ class WindowCapture:
         threadid, self.pid  = GetWindowThreadProcessId(self.hwnd)
 
         if not self.hwnd:
-            messagebox.showerror("404", "Run {} before pressing Start !".format(window_name))
+            messagebox.showerror("Error", "Run {} first !".format(window_name))
             return
-        ShowWindow(self.hwnd, SW_MAXIMIZE)
 
     def calcBox(self, w, h):
-        if ((w, h) == (p1080[0][1])): adj = (0,)*4
-        else : adj = (-2, 2, 0, 27)
+        pad__w, pad__h, pad__x, pad__y = (0,)*4
+
+        if (w, h) == windowed_mode: pad__w, pad__h, pad__x, pad__y = -2, 2, 0, 27
 
         w, h = w - border, h - titlebar
-        w, h, x, y = round(w // c_w), round(h // c_h), round(w // c_x), round(h // c_y)
+        w, h, x, y = round(w // point__w), round(h // point__h), round(w // point__x), round(h // point__y)
 
-        return w + adj[0], h + adj[1], x + adj[2], y + adj[3]
+        return w + pad__w, h + pad__h, x + pad__x, y + pad__y
 
     def computeBox(self):
         left, top, right, bottom = GetWindowRect(self.hwnd)
         flags, self.state, ptMin, ptMax, rect = GetWindowPlacement(self.hwnd)
-        self.w, self.h = right - left, bottom - top
-        # print(self.w, self.h)
-        # print(left, top, right, bottom, rect)
-        # print(flags, self.state, ptMin, ptMax, rect)
 
-        # print(self.fullscreen)
+        self.w, self.h = right - left, bottom - top
+        # print(self.w)
+
+        # Maximize window if smaller than threshold
+        if self.w < width_threshold:
+            ShowWindow(self.hwnd, 3)
+
         return self.calcBox(self.w, self.h)
 
-    def screenshot(self, var=0):
+    def screenshot(self):
         w, h, x, y = self.computeBox()
 
         wDC = GetWindowDC(self.hwnd)        
@@ -57,7 +63,6 @@ class WindowCapture:
 
         try: dataBitMap.CreateCompatibleBitmap(dcObj, w, h)
         except Exception as e:
-            messagebox.showerror(e)
             return
 
         cDC.SelectObject(dataBitMap)
